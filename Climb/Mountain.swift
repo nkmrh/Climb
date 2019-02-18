@@ -22,13 +22,13 @@ struct Mountain: Equatable, Codable {
     let description: String
     let thumbnailUrl: URL
     let imageUrl: URL
-    let elevation: Int
+    let elevation: Double
     let latitude: Double
     let longitude: Double
     let prefectures: [String]
     let areaId: Int
     let likeCount: Int
-    let isLike: Bool
+    let isLike: String
     let activityCount: Int
     let viewCount: Int
     let difficultyLevel: DifficultyLevel

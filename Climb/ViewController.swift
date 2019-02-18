@@ -10,11 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    private let MountainsURL = "https://s3-ap-northeast-1.amazonaws.com/file.yamap.co.jp/ios/mountains.json"
+
+    private func fetchMountains(completion: @escaping ([Mountain]?, Error?)->()) {
+        let url = URL(string: MountainsURL)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let response = response {
+                print(response)
+                print(data)
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let mountains = try decoder.decode([Mountain].self, from: data)
+                    completion(mountains, nil)
+                } catch {
+                    completion(nil, error)
+                }
+            } else {
+                completion(nil, error)
+            }
+        }
+        task.resume()
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
+        fetchMountains { mountains, error in
+            debugPrint(mountains, error)
+        }
+    }
 }
-
