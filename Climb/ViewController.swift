@@ -9,10 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     private let MountainsURL = "https://s3-ap-northeast-1.amazonaws.com/file.yamap.co.jp/ios/mountains.json"
 
-    private func fetchMountains(completion: @escaping ([Mountain]?, Error?)->()) {
+    private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
         let url = URL(string: MountainsURL)!
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data, let response = response {
