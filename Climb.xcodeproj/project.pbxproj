@@ -14,6 +14,7 @@
 		EFC82B76221AD8D60062BF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC82B74221AD8D60062BF22 /* LaunchScreen.storyboard */; };
 		EFC82B81221AD8D60062BF22 /* ClimbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B80221AD8D60062BF22 /* ClimbTests.swift */; };
 		EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8B221ADA4D0062BF22 /* Mountain.swift */; };
+		EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8D221C43770062BF22 /* MountainTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		EFC82B80221AD8D60062BF22 /* ClimbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbTests.swift; sourceTree = "<group>"; };
 		EFC82B82221AD8D60062BF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFC82B8B221ADA4D0062BF22 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
+		EFC82B8D221C43770062BF22 /* MountainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				EFC82B80221AD8D60062BF22 /* ClimbTests.swift */,
 				EFC82B82221AD8D60062BF22 /* Info.plist */,
+				EFC82B8D221C43770062BF22 /* MountainTests.swift */,
 			);
 			path = ClimbTests;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */,
 				EFC82B81221AD8D60062BF22 /* ClimbTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

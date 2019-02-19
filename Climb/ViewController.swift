@@ -18,9 +18,7 @@ class ViewController: UIViewController {
                 print(response)
                 print(data)
                 do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let mountains = try decoder.decode([Mountain].self, from: data)
+                    let mountains = try JSONDecoder().decode([Mountain].self, from: data)
                     completion(mountains, nil)
                 } catch {
                     completion(nil, error)
