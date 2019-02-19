@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MountainListViewController: UIViewController {
     private let MountainsURL = "https://s3-ap-northeast-1.amazonaws.com/file.yamap.co.jp/ios/mountains.json"
 
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
