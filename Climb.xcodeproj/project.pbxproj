@@ -15,6 +15,8 @@
 		EFC82B81221AD8D60062BF22 /* ClimbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B80221AD8D60062BF22 /* ClimbTests.swift */; };
 		EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8B221ADA4D0062BF22 /* Mountain.swift */; };
 		EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8D221C43770062BF22 /* MountainTests.swift */; };
+		EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8F221C4C260062BF22 /* MountainCell.swift */; };
+		EFC82B94221D874B0062BF22 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC82B93221D874B0062BF22 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		EFC82B82221AD8D60062BF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EFC82B8B221ADA4D0062BF22 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		EFC82B8D221C43770062BF22 /* MountainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
+		EFC82B8F221C4C260062BF22 /* MountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
+		EFC82B93221D874B0062BF22 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC82B94221D874B0062BF22 /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +71,7 @@
 				EFC82B6A221AD8D40062BF22 /* Climb */,
 				EFC82B7F221AD8D60062BF22 /* ClimbTests */,
 				EFC82B69221AD8D40062BF22 /* Products */,
+				EFC82B92221D874A0062BF22 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +94,7 @@
 				EFC82B74221AD8D60062BF22 /* LaunchScreen.storyboard */,
 				EFC82B77221AD8D60062BF22 /* Info.plist */,
 				EFC82B8B221ADA4D0062BF22 /* Mountain.swift */,
+				EFC82B8F221C4C260062BF22 /* MountainCell.swift */,
 			);
 			path = Climb;
 			sourceTree = "<group>";
@@ -102,6 +109,14 @@
 			path = ClimbTests;
 			sourceTree = "<group>";
 		};
+		EFC82B92221D874A0062BF22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EFC82B93221D874B0062BF22 /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,6 +124,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EFC82B85221AD8D60062BF22 /* Build configuration list for PBXNativeTarget "Climb" */;
 			buildPhases = (
+				EFC82B91221D86A40062BF22 /* Carthage */,
 				EFC82B64221AD8D40062BF22 /* Sources */,
 				EFC82B65221AD8D40062BF22 /* Frameworks */,
 				EFC82B66221AD8D40062BF22 /* Resources */,
@@ -198,11 +214,35 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EFC82B91221D86A40062BF22 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EFC82B64221AD8D40062BF22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */,
 				EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */,
 				EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */,
 				EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */,
@@ -370,6 +410,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA8AV789YN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Climb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -388,6 +432,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QA8AV789YN;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Climb/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

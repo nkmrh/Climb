@@ -10,6 +10,9 @@ import UIKit
 
 class MountainListViewController: UIViewController {
     private let MountainsURL = "https://s3-ap-northeast-1.amazonaws.com/file.yamap.co.jp/ios/mountains.json"
+    private var mountains: [Mountain] = []
+
+    @IBOutlet weak var tableView: UITableView!
 
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
         let url = URL(string: MountainsURL)!
@@ -33,8 +36,32 @@ class MountainListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchMountains { mountains, error in
-            debugPrint(mountains, error)
+        fetchMountains { [weak self] mountains, error in
+            if let mountains = mountains {
+                self?.mountains = mountains
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
         }
     }
+}
+
+extension MountainListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return mountains.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MountainCell", for: indexPath) as? MountainCell else {
+            fatalError("Could not get MountainCell.")
+        }
+        let mountain = mountains[indexPath.row]
+        cell.configure(with: mountain)
+        return cell
+    }
+}
+
+extension MountainListViewController: UITableViewDelegate {
+
 }
