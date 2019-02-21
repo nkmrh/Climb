@@ -17,6 +17,8 @@
 		EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8D221C43770062BF22 /* MountainTests.swift */; };
 		EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8F221C4C260062BF22 /* MountainCell.swift */; };
 		EFC82B94221D874B0062BF22 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC82B93221D874B0062BF22 /* Kingfisher.framework */; };
+		EFC82B96221D8D9C0062BF22 /* MountainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */; };
+		EFC82B9A221DA4FE0062BF22 /* BackgroundHighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		EFC82B8D221C43770062BF22 /* MountainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
 		EFC82B8F221C4C260062BF22 /* MountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
 		EFC82B93221D874B0062BF22 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailViewController.swift; sourceTree = "<group>"; };
+		EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				EFC82B77221AD8D60062BF22 /* Info.plist */,
 				EFC82B8B221ADA4D0062BF22 /* Mountain.swift */,
 				EFC82B8F221C4C260062BF22 /* MountainCell.swift */,
+				EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */,
+				EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */,
 			);
 			path = Climb;
 			sourceTree = "<group>";
@@ -243,7 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */,
+				EFC82B96221D8D9C0062BF22 /* MountainDetailViewController.swift in Sources */,
 				EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */,
+				EFC82B9A221DA4FE0062BF22 /* BackgroundHighlightedButton.swift in Sources */,
 				EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */,
 				EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */,
 			);
