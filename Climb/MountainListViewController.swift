@@ -15,22 +15,30 @@ class MountainListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
-        let url = URL(string: MountainsURL)!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let response = response {
-                print(response)
-                print(data)
-                do {
-                    let mountains = try JSONDecoder().decode([Mountain].self, from: data)
-                    completion(mountains, nil)
-                } catch {
-                    completion(nil, error)
-                }
-            } else {
-                completion(nil, error)
-            }
+//        let url = URL(string: MountainsURL)!
+//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+//            if let data = data, let response = response {
+//                print(response)
+//                print(data)
+//                do {
+//                    let mountains = try JSONDecoder().decode([Mountain].self, from: data)
+//                    completion(mountains, nil)
+//                } catch {
+//                    completion(nil, error)
+//                }
+//            } else {
+//                completion(nil, error)
+//            }
+//        }
+//        task.resume()
+
+
+        if let filepath = Bundle.main.path(forResource: "response", ofType: "json") {
+            let contents = try! String(contentsOfFile: filepath)
+            let mountains = try! JSONDecoder().decode([Mountain].self, from: contents.data(using: .utf8)!)
+            completion(mountains, nil)
         }
-        task.resume()
+
     }
 
     override func viewDidLoad() {
@@ -53,9 +61,7 @@ extension MountainListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MountainCell", for: indexPath) as? MountainCell else {
-            fatalError("Could not get MountainCell.")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MountainCell", for: indexPath) as! MountainCell
         let mountain = mountains[indexPath.row]
         cell.configure(with: mountain)
         return cell
@@ -63,5 +69,8 @@ extension MountainListViewController: UITableViewDataSource {
 }
 
 extension MountainListViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = MountainDetailViewController.makeInstance(mountain: mountains[indexPath.row])
+        navigationController?.pushViewController(viewController, animated: true)
+    }
 }

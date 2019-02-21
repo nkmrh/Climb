@@ -32,6 +32,7 @@ class MountainDetailViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        title = "山詳細画面"
         nameLabel.text = mountain.name
         prefectureLabel.text = mountain.prefectures.joined(separator: "/")
         likeLabel.text = "いいね！\(mountain.likeCount)"
