@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		642C7404222406EA00AEC1C3 /* MountainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C73FB222406EA00AEC1C3 /* MountainDetailViewController.swift */; };
+		642C7405222406EA00AEC1C3 /* MountainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C73FC222406EA00AEC1C3 /* MountainListViewController.swift */; };
+		642C7406222406EA00AEC1C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C73FD222406EA00AEC1C3 /* AppDelegate.swift */; };
+		642C7407222406EA00AEC1C3 /* RecommendedMountainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C73FF222406EA00AEC1C3 /* RecommendedMountainProvider.swift */; };
+		642C7408222406EA00AEC1C3 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C7400222406EA00AEC1C3 /* Mountain.swift */; };
+		642C7409222406EA00AEC1C3 /* BackgroundHighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C7402222406EA00AEC1C3 /* BackgroundHighlightedButton.swift */; };
+		642C740A222406EA00AEC1C3 /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 642C7403222406EA00AEC1C3 /* MountainCell.swift */; };
 		EF13098F22227B1D006D42BD /* RecommendedMountainProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF13098E22227B1D006D42BD /* RecommendedMountainProviderTests.swift */; };
-		EF13099122227C32006D42BD /* RecommendedMountainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */; };
-		EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B6B221AD8D40062BF22 /* AppDelegate.swift */; };
-		EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B6D221AD8D40062BF22 /* MountainListViewController.swift */; };
 		EFC82B71221AD8D40062BF22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC82B6F221AD8D40062BF22 /* Main.storyboard */; };
 		EFC82B73221AD8D60062BF22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFC82B72221AD8D60062BF22 /* Assets.xcassets */; };
 		EFC82B76221AD8D60062BF22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC82B74221AD8D60062BF22 /* LaunchScreen.storyboard */; };
 		EFC82B81221AD8D60062BF22 /* ClimbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B80221AD8D60062BF22 /* ClimbTests.swift */; };
-		EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8B221ADA4D0062BF22 /* Mountain.swift */; };
 		EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8D221C43770062BF22 /* MountainTests.swift */; };
-		EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B8F221C4C260062BF22 /* MountainCell.swift */; };
 		EFC82B94221D874B0062BF22 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFC82B93221D874B0062BF22 /* Kingfisher.framework */; };
-		EFC82B96221D8D9C0062BF22 /* MountainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */; };
-		EFC82B9A221DA4FE0062BF22 /* BackgroundHighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,11 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		642C73FB222406EA00AEC1C3 /* MountainDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainDetailViewController.swift; sourceTree = "<group>"; };
+		642C73FC222406EA00AEC1C3 /* MountainListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainListViewController.swift; sourceTree = "<group>"; };
+		642C73FD222406EA00AEC1C3 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		642C73FF222406EA00AEC1C3 /* RecommendedMountainProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendedMountainProvider.swift; sourceTree = "<group>"; };
+		642C7400222406EA00AEC1C3 /* Mountain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
+		642C7402222406EA00AEC1C3 /* BackgroundHighlightedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundHighlightedButton.swift; sourceTree = "<group>"; };
+		642C7403222406EA00AEC1C3 /* MountainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
 		EF13098E22227B1D006D42BD /* RecommendedMountainProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedMountainProviderTests.swift; sourceTree = "<group>"; };
-		EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedMountainProvider.swift; sourceTree = "<group>"; };
 		EFC82B68221AD8D40062BF22 /* Climb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climb.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EFC82B6B221AD8D40062BF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EFC82B6D221AD8D40062BF22 /* MountainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListViewController.swift; sourceTree = "<group>"; };
 		EFC82B70221AD8D40062BF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EFC82B72221AD8D60062BF22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFC82B75221AD8D60062BF22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,12 +50,8 @@
 		EFC82B7C221AD8D60062BF22 /* ClimbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClimbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC82B80221AD8D60062BF22 /* ClimbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimbTests.swift; sourceTree = "<group>"; };
 		EFC82B82221AD8D60062BF22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EFC82B8B221ADA4D0062BF22 /* Mountain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mountain.swift; sourceTree = "<group>"; };
 		EFC82B8D221C43770062BF22 /* MountainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainTests.swift; sourceTree = "<group>"; };
-		EFC82B8F221C4C260062BF22 /* MountainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainCell.swift; sourceTree = "<group>"; };
 		EFC82B93221D874B0062BF22 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
-		EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainDetailViewController.swift; sourceTree = "<group>"; };
-		EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundHighlightedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +73,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		642C73FA222406EA00AEC1C3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				642C73FD222406EA00AEC1C3 /* AppDelegate.swift */,
+				642C73FB222406EA00AEC1C3 /* MountainDetailViewController.swift */,
+				642C73FC222406EA00AEC1C3 /* MountainListViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		642C73FE222406EA00AEC1C3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				642C7400222406EA00AEC1C3 /* Mountain.swift */,
+				642C73FF222406EA00AEC1C3 /* RecommendedMountainProvider.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		642C7401222406EA00AEC1C3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				642C7402222406EA00AEC1C3 /* BackgroundHighlightedButton.swift */,
+				642C7403222406EA00AEC1C3 /* MountainCell.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		EFC82B5F221AD8D40062BF22 = {
 			isa = PBXGroup;
 			children = (
@@ -95,17 +123,13 @@
 		EFC82B6A221AD8D40062BF22 /* Climb */ = {
 			isa = PBXGroup;
 			children = (
-				EFC82B6B221AD8D40062BF22 /* AppDelegate.swift */,
-				EFC82B6D221AD8D40062BF22 /* MountainListViewController.swift */,
+				642C73FE222406EA00AEC1C3 /* model */,
+				642C7401222406EA00AEC1C3 /* view */,
+				642C73FA222406EA00AEC1C3 /* controller */,
+				EFC82B77221AD8D60062BF22 /* Info.plist */,
+				EFC82B74221AD8D60062BF22 /* LaunchScreen.storyboard */,
 				EFC82B6F221AD8D40062BF22 /* Main.storyboard */,
 				EFC82B72221AD8D60062BF22 /* Assets.xcassets */,
-				EFC82B74221AD8D60062BF22 /* LaunchScreen.storyboard */,
-				EFC82B77221AD8D60062BF22 /* Info.plist */,
-				EFC82B8B221ADA4D0062BF22 /* Mountain.swift */,
-				EFC82B8F221C4C260062BF22 /* MountainCell.swift */,
-				EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */,
-				EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */,
-				EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */,
 			);
 			path = Climb;
 			sourceTree = "<group>";
@@ -254,13 +278,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFC82B90221C4C260062BF22 /* MountainCell.swift in Sources */,
-				EFC82B96221D8D9C0062BF22 /* MountainDetailViewController.swift in Sources */,
-				EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */,
-				EFC82B9A221DA4FE0062BF22 /* BackgroundHighlightedButton.swift in Sources */,
-				EF13099122227C32006D42BD /* RecommendedMountainProvider.swift in Sources */,
-				EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */,
-				EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */,
+				642C7406222406EA00AEC1C3 /* AppDelegate.swift in Sources */,
+				642C7405222406EA00AEC1C3 /* MountainListViewController.swift in Sources */,
+				642C7408222406EA00AEC1C3 /* Mountain.swift in Sources */,
+				642C7409222406EA00AEC1C3 /* BackgroundHighlightedButton.swift in Sources */,
+				642C740A222406EA00AEC1C3 /* MountainCell.swift in Sources */,
+				642C7404222406EA00AEC1C3 /* MountainDetailViewController.swift in Sources */,
+				642C7407222406EA00AEC1C3 /* RecommendedMountainProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
