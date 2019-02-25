@@ -24,7 +24,7 @@ class MountainListViewController: UIViewController {
 
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
         guard let url = URL(string: MountainsURL) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url) { data, _, error in
             if let data = data {
                 do {
                     let mountains = try JSONDecoder().decode([Mountain].self, from: data)
