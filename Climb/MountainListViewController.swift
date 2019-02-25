@@ -23,28 +23,20 @@ class MountainListViewController: UIViewController {
     }
 
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
-//        let url = URL(string: MountainsURL)!
-//        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-//            if let data = data, let response = response {
-//                print(response)
-//                print(data)
-//                do {
-//                    let mountains = try JSONDecoder().decode([Mountain].self, from: data)
-//                    completion(mountains, nil)
-//                } catch {
-//                    completion(nil, error)
-//                }
-//            } else {
-//                completion(nil, error)
-//            }
-//        }
-//        task.resume()
-
-        if let filepath = Bundle.main.path(forResource: "response", ofType: "json") {
-            let contents = try! String(contentsOfFile: filepath)
-            let mountains = try! JSONDecoder().decode([Mountain].self, from: contents.data(using: .utf8)!)
-            completion(mountains, nil)
+        guard let url = URL(string: MountainsURL) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data {
+                do {
+                    let mountains = try JSONDecoder().decode([Mountain].self, from: data)
+                    completion(mountains, nil)
+                } catch {
+                    completion(nil, error)
+                }
+            } else {
+                completion(nil, error)
+            }
         }
+        task.resume()
     }
 
     override func viewDidLoad() {
