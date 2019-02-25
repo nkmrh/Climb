@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 import Kingfisher
 
+protocol MountainDetailViewControllerDelegate: class {
+    func mountainDetailViewControllerDidUpdate(_ mountain: Mountain)
+}
+
 class MountainDetailViewController: UIViewController {
     @IBOutlet weak private var nameLabel: UILabel!
     @IBOutlet weak private var prefectureLabel: UILabel!
@@ -27,6 +31,8 @@ class MountainDetailViewController: UIViewController {
 
     var mountain: Mountain!
     var recommendedMountains: [Mountain]!
+
+    weak var delegate: MountainDetailViewControllerDelegate?
 
     private var likeLabelTextColor: UIColor {
         get {
@@ -48,8 +54,7 @@ class MountainDetailViewController: UIViewController {
         return viewController
     }
 
-    override func viewDidLoad() {
-        title = "山詳細画面"
+    private func updateAppearances(with mountain: Mountain) {
         nameLabel.text = mountain.name
         prefectureLabel.text = mountain.prefectures.joined(separator: "/")
         likeLabel.text = "いいね！\(mountain.likeCount)"
@@ -57,9 +62,15 @@ class MountainDetailViewController: UIViewController {
         elevationLabel.text = "\(mountain.elevation)m"
         mountainImageView.kf.setImage(with: mountain.imageURL, options: [.transition(.fade(0.2))])
         descriptionLabel.text = mountain.description
-        likeButton.highlightedBackgroundColor = likeButtonBackgroundColor.withAlphaComponent(0.8)
+        likeButton.highlightedBackgroundColor = likeButtonBackgroundColor.withAlphaComponent(0.9)
         likeButton.nonHighlightedBackgroundColor = likeButtonBackgroundColor
         likeButton.isHighlighted = false
+    }
+
+    override func viewDidLoad() {
+        title = "山詳細画面"
+
+        updateAppearances(with: mountain)
 
         if recommendedMountains.isEmpty {
             recommendedContainerStackView.isHidden = true
@@ -76,5 +87,12 @@ class MountainDetailViewController: UIViewController {
                                                              options: [.transition(.fade(0.2))])
             secondlyRecommendedMountainNameLabel.text = recommendedMountains[1].name
         }
+    }
+
+    @IBAction func likeButtonAction(_ sender: UIButton) {
+        mountain.isLike = !mountain.isLike
+        mountain.likeCount = mountain.isLike ? mountain.likeCount + 1 : mountain.likeCount - 1
+        updateAppearances(with: mountain)
+        delegate?.mountainDetailViewControllerDidUpdate(mountain)
     }
 }

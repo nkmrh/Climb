@@ -14,6 +14,14 @@ class MountainListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    private func updateMountains(with mountain: Mountain) {
+        guard let index = mountains.firstIndex(of: mountain) else { return }
+        mountains[index] = mountain
+        DispatchQueue.main.async { [weak self] in
+            self?.tableView.reloadData()
+        }
+    }
+
     private func fetchMountains(completion: @escaping ([Mountain]?, Error?) -> Void) {
 //        let url = URL(string: MountainsURL)!
 //        let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -81,6 +89,13 @@ extension MountainListViewController: UITableViewDelegate {
         let recommendedMountains = RecommendedMountainProvider.makeRecommendedMountains(for: mountain, from: mountains)
         let viewController = MountainDetailViewController.makeInstance(mountain: mountain,
                                                                        recommendedMountains: recommendedMountains)
+        viewController.delegate = self
         navigationController?.pushViewController(viewController, animated: true)
+    }
+}
+
+extension MountainListViewController: MountainDetailViewControllerDelegate {
+    func mountainDetailViewControllerDidUpdate(_ mountain: Mountain) {
+        updateMountains(with: mountain)
     }
 }

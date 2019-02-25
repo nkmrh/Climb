@@ -27,8 +27,8 @@ struct Mountain: Equatable, Decodable {
     let longitude: Double
     let prefectures: [String]
     let areaId: Int
-    let likeCount: Int
-    let isLike: Bool
+    var likeCount: Int
+    var isLike: Bool
     let activityCount: Int
     let viewCount: Int
     let difficultyLevel: DifficultyLevel
