@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF13098F22227B1D006D42BD /* RecommendedMountainProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF13098E22227B1D006D42BD /* RecommendedMountainProviderTests.swift */; };
+		EF13099122227C32006D42BD /* RecommendedMountainProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */; };
 		EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B6B221AD8D40062BF22 /* AppDelegate.swift */; };
 		EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC82B6D221AD8D40062BF22 /* MountainListViewController.swift */; };
 		EFC82B71221AD8D40062BF22 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFC82B6F221AD8D40062BF22 /* Main.storyboard */; };
@@ -33,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF13098E22227B1D006D42BD /* RecommendedMountainProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedMountainProviderTests.swift; sourceTree = "<group>"; };
+		EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedMountainProvider.swift; sourceTree = "<group>"; };
 		EFC82B68221AD8D40062BF22 /* Climb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Climb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFC82B6B221AD8D40062BF22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFC82B6D221AD8D40062BF22 /* MountainListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MountainListViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +108,7 @@
 				EFC82B95221D8D9C0062BF22 /* MountainDetailViewController.swift */,
 				EFC82B99221DA4FE0062BF22 /* BackgroundHighlightedButton.swift */,
 				EFC82B9B221EDD5B0062BF22 /* response.json */,
+				EF13099022227C32006D42BD /* RecommendedMountainProvider.swift */,
 			);
 			path = Climb;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 				EFC82B80221AD8D60062BF22 /* ClimbTests.swift */,
 				EFC82B82221AD8D60062BF22 /* Info.plist */,
 				EFC82B8D221C43770062BF22 /* MountainTests.swift */,
+				EF13098E22227B1D006D42BD /* RecommendedMountainProviderTests.swift */,
 			);
 			path = ClimbTests;
 			sourceTree = "<group>";
@@ -243,7 +249,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "#/usr/local/bin/carthage copy-frameworks\n/opt/brew/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -256,6 +262,7 @@
 				EFC82B96221D8D9C0062BF22 /* MountainDetailViewController.swift in Sources */,
 				EFC82B6E221AD8D40062BF22 /* MountainListViewController.swift in Sources */,
 				EFC82B9A221DA4FE0062BF22 /* BackgroundHighlightedButton.swift in Sources */,
+				EF13099122227C32006D42BD /* RecommendedMountainProvider.swift in Sources */,
 				EFC82B8C221ADA4D0062BF22 /* Mountain.swift in Sources */,
 				EFC82B6C221AD8D40062BF22 /* AppDelegate.swift in Sources */,
 			);
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF13098F22227B1D006D42BD /* RecommendedMountainProviderTests.swift in Sources */,
 				EFC82B8E221C43770062BF22 /* MountainTests.swift in Sources */,
 				EFC82B81221AD8D60062BF22 /* ClimbTests.swift in Sources */,
 			);
