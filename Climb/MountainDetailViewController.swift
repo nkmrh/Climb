@@ -17,6 +17,8 @@ class MountainDetailViewController: UIViewController {
     @IBOutlet weak private var elevationLabel: UILabel!
     @IBOutlet weak private var mountainImageView: UIImageView!
     @IBOutlet weak private var descriptionLabel: UILabel!
+    @IBOutlet weak private var recommendedContainerStackView: UIStackView!
+    @IBOutlet weak private var secondlyRecommendedStackView: UIStackView!
     @IBOutlet weak private var firstlyRecommendedMountainImageView: UIImageView!
     @IBOutlet weak private var firstlyRecommendedMountainNameLabel: UILabel!
     @IBOutlet weak private var secondlyRecommendedMountainImageView: UIImageView!
@@ -24,6 +26,7 @@ class MountainDetailViewController: UIViewController {
     @IBOutlet weak private var likeButton: BackgroundHighlightedButton!
 
     var mountain: Mountain!
+    var recommendedMountains: [Mountain]!
 
     private var likeLabelTextColor: UIColor {
         get {
@@ -37,10 +40,11 @@ class MountainDetailViewController: UIViewController {
         }
     }
 
-    static func makeInstance(mountain: Mountain) -> MountainDetailViewController {
+    static func makeInstance(mountain: Mountain, recommendedMountains: [Mountain]) -> MountainDetailViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "MountainDetailViewController") as! MountainDetailViewController
         viewController.mountain = mountain
+        viewController.recommendedMountains = recommendedMountains
         return viewController
     }
 
@@ -51,10 +55,26 @@ class MountainDetailViewController: UIViewController {
         likeLabel.text = "いいね！\(mountain.likeCount)"
         likeLabel.textColor = likeLabelTextColor
         elevationLabel.text = "\(mountain.elevation)m"
-        mountainImageView.kf.setImage(with: mountain.thumbnailURL, options: [.transition(.fade(0.2))])
+        mountainImageView.kf.setImage(with: mountain.imageURL, options: [.transition(.fade(0.2))])
         descriptionLabel.text = mountain.description
         likeButton.highlightedBackgroundColor = likeButtonBackgroundColor.withAlphaComponent(0.8)
         likeButton.nonHighlightedBackgroundColor = likeButtonBackgroundColor
         likeButton.isHighlighted = false
+
+        if recommendedMountains.isEmpty {
+            recommendedContainerStackView.isHidden = true
+        } else if recommendedMountains.count == 1 {
+            firstlyRecommendedMountainImageView.kf.setImage(with: recommendedMountains.first?.imageURL,
+                                                            options: [.transition(.fade(0.2))])
+            firstlyRecommendedMountainNameLabel.text = recommendedMountains.first?.name
+            secondlyRecommendedStackView.isHidden = true
+        } else if recommendedMountains.count >= 2 {
+            firstlyRecommendedMountainImageView.kf.setImage(with: recommendedMountains.first?.imageURL,
+                                                            options: [.transition(.fade(0.2))])
+            firstlyRecommendedMountainNameLabel.text = recommendedMountains.first?.name
+            secondlyRecommendedMountainImageView.kf.setImage(with: recommendedMountains[1].imageURL,
+                                                             options: [.transition(.fade(0.2))])
+            secondlyRecommendedMountainNameLabel.text = recommendedMountains[1].name
+        }
     }
 }

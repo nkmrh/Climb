@@ -56,7 +56,9 @@ struct Mountain: Equatable, Decodable {
         case difficultyLevel = "difficulty_level"
         case physicalLevel = "physical_level"
     }
+}
 
+extension Mountain {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         id = try values.decode(Int.self, forKey: .id)

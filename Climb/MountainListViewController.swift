@@ -53,6 +53,13 @@ class MountainListViewController: UIViewController {
             }
         }
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let indexPath = tableView.indexPathForSelectedRow {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+    }
 }
 
 extension MountainListViewController: UITableViewDataSource {
@@ -70,7 +77,10 @@ extension MountainListViewController: UITableViewDataSource {
 
 extension MountainListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController = MountainDetailViewController.makeInstance(mountain: mountains[indexPath.row])
+        let mountain = mountains[indexPath.row]
+        let recommendedMountains = RecommendedMountainProvider.makeRecommendedMountains(for: mountain, from: mountains)
+        let viewController = MountainDetailViewController.makeInstance(mountain: mountain,
+                                                                       recommendedMountains: recommendedMountains)
         navigationController?.pushViewController(viewController, animated: true)
     }
 }
