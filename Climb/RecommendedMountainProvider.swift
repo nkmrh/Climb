@@ -6,8 +6,8 @@
 //  Copyright © 2019 Hajime Nakamura. All rights reserved.
 //
 
-import Foundation
 import CoreLocation
+import Foundation
 
 struct RecommendedMountainProvider {
     static func makeRecommendedMountains(for mountain: Mountain, from mountains: [Mountain]) -> [Mountain] {

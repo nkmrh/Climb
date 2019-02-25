@@ -12,7 +12,7 @@ class MountainListViewController: UIViewController {
     private let MountainsURL = "https://s3-ap-northeast-1.amazonaws.com/file.yamap.co.jp/ios/mountains.json"
     private var mountains: [Mountain] = []
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
 
     private func updateMountains(with mountain: Mountain) {
         guard let index = mountains.firstIndex(of: mountain) else { return }
@@ -40,19 +40,17 @@ class MountainListViewController: UIViewController {
 //        }
 //        task.resume()
 
-
         if let filepath = Bundle.main.path(forResource: "response", ofType: "json") {
             let contents = try! String(contentsOfFile: filepath)
             let mountains = try! JSONDecoder().decode([Mountain].self, from: contents.data(using: .utf8)!)
             completion(mountains, nil)
         }
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        fetchMountains { [weak self] mountains, error in
+        fetchMountains { [weak self] mountains, _ in
             if let mountains = mountains {
                 self?.mountains = mountains
                 DispatchQueue.main.async {
@@ -71,7 +69,7 @@ class MountainListViewController: UIViewController {
 }
 
 extension MountainListViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return mountains.count
     }
 
@@ -84,7 +82,7 @@ extension MountainListViewController: UITableViewDataSource {
 }
 
 extension MountainListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mountain = mountains[indexPath.row]
         let recommendedMountains = RecommendedMountainProvider.makeRecommendedMountains(for: mountain, from: mountains)
         let viewController = MountainDetailViewController.makeInstance(mountain: mountain,

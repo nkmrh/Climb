@@ -10,15 +10,14 @@ import Foundation
 import UIKit
 
 class BackgroundHighlightedButton: UIButton {
-    var highlightedBackgroundColor :UIColor?
-    var nonHighlightedBackgroundColor :UIColor?
+    var highlightedBackgroundColor: UIColor?
+    var nonHighlightedBackgroundColor: UIColor?
 
-    override var isHighlighted :Bool {
+    override var isHighlighted: Bool {
         didSet {
             if isHighlighted {
                 backgroundColor = highlightedBackgroundColor
-            }
-            else {
+            } else {
                 backgroundColor = nonHighlightedBackgroundColor
             }
         }

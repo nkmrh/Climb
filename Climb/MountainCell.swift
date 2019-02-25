@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import UIKit
 import Kingfisher
+import UIKit
 
 class MountainCell: UITableViewCell {
-    @IBOutlet weak var thumbnailImageView: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var thumbUpImageView: UIImageView!
-    @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet private var thumbnailImageView: UIImageView!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var thumbUpImageView: UIImageView!
+    @IBOutlet private var likeLabel: UILabel!
 
     private func makeThumbUpImage(_ isLike: Bool) -> Image? {
         let name = isLike ? "ThumbUpOrange" : "ThumbUp"

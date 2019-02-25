@@ -7,27 +7,27 @@
 //
 
 import Foundation
-import UIKit
 import Kingfisher
+import UIKit
 
 protocol MountainDetailViewControllerDelegate: class {
     func mountainDetailViewControllerDidUpdate(_ mountain: Mountain)
 }
 
 class MountainDetailViewController: UIViewController {
-    @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak private var prefectureLabel: UILabel!
-    @IBOutlet weak private var likeLabel: UILabel!
-    @IBOutlet weak private var elevationLabel: UILabel!
-    @IBOutlet weak private var mountainImageView: UIImageView!
-    @IBOutlet weak private var descriptionLabel: UILabel!
-    @IBOutlet weak private var recommendedContainerStackView: UIStackView!
-    @IBOutlet weak private var secondlyRecommendedStackView: UIStackView!
-    @IBOutlet weak private var firstlyRecommendedMountainImageView: UIImageView!
-    @IBOutlet weak private var firstlyRecommendedMountainNameLabel: UILabel!
-    @IBOutlet weak private var secondlyRecommendedMountainImageView: UIImageView!
-    @IBOutlet weak private var secondlyRecommendedMountainNameLabel: UILabel!
-    @IBOutlet weak private var likeButton: BackgroundHighlightedButton!
+    @IBOutlet private var nameLabel: UILabel!
+    @IBOutlet private var prefectureLabel: UILabel!
+    @IBOutlet private var likeLabel: UILabel!
+    @IBOutlet private var elevationLabel: UILabel!
+    @IBOutlet private var mountainImageView: UIImageView!
+    @IBOutlet private var descriptionLabel: UILabel!
+    @IBOutlet private var recommendedContainerStackView: UIStackView!
+    @IBOutlet private var secondlyRecommendedStackView: UIStackView!
+    @IBOutlet private var firstlyRecommendedMountainImageView: UIImageView!
+    @IBOutlet private var firstlyRecommendedMountainNameLabel: UILabel!
+    @IBOutlet private var secondlyRecommendedMountainImageView: UIImageView!
+    @IBOutlet private var secondlyRecommendedMountainNameLabel: UILabel!
+    @IBOutlet private var likeButton: BackgroundHighlightedButton!
 
     var mountain: Mountain!
     var recommendedMountains: [Mountain]!
@@ -35,15 +35,11 @@ class MountainDetailViewController: UIViewController {
     weak var delegate: MountainDetailViewControllerDelegate?
 
     private var likeLabelTextColor: UIColor {
-        get {
-            return mountain.isLike ? .orange : .black
-        }
+        return mountain.isLike ? .orange : .black
     }
 
     private var likeButtonBackgroundColor: UIColor {
-        get {
-            return mountain.isLike ? .orange : .gray
-        }
+        return mountain.isLike ? .orange : .gray
     }
 
     static func makeInstance(mountain: Mountain, recommendedMountains: [Mountain]) -> MountainDetailViewController {
@@ -89,7 +85,7 @@ class MountainDetailViewController: UIViewController {
         }
     }
 
-    @IBAction func likeButtonAction(_ sender: UIButton) {
+    @IBAction func likeButtonAction(_: UIButton) {
         mountain.isLike = !mountain.isLike
         mountain.likeCount = mountain.isLike ? mountain.likeCount + 1 : mountain.likeCount - 1
         updateAppearances(with: mountain)
